@@ -7,15 +7,12 @@ let countriesNmb = table1.rows[2].cells[1].innerHTML;
 
 //gestion des données du premier tableau
 
-console.log(countriesNmb);
-
 let years = [];
 
 for(let i = 2;i<yearslength;i++){
     years.push(table1.rows[1].cells[i].innerHTML);
 }
 
-console.log(years);
 
 let countries = [];
 
@@ -41,19 +38,199 @@ let chart = new Chart(ctx, {
     data: {
         labels: years,
         datasets: [{
-            label: 'Unfilled',
+            label: countries[0],
             data: [
                 10,10,10,20,30
             ],
         }, {
-            label: 'Dashed',
+            label: countries[1],
             fill: false,
             borderDash: [5, 5],
             data:  [
                 10,15,35,30,30
             ],
         }, {
-            label: 'Filled',
+            label: countries[2],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[3],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[4],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[5],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[6],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[7],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[8],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[9],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[10],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[11],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[12],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[13],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[14],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[15],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[16],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[17],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[18],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[19],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[20],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[21],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[22],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[23],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[24],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[25],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[26],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[27],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[28],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[29],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[30],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[31],
+            data: [
+                10,1,28,37,30
+            ],
+            fill: true,
+        }, {
+            label: countries[32],
             data: [
                 10,1,28,37,30
             ],
@@ -62,6 +239,16 @@ let chart = new Chart(ctx, {
     },
     options: {}
 });
+
+
+for(let i=0 ; i= countries.lenght;i++){
+    for(let j = 0; j>12; j++){
+        countries[i] = new Array(table1.rows[i].cells[j].innerHTML);
+    }    
+}
+
+console.log(countries[1])
+
 
 
 
