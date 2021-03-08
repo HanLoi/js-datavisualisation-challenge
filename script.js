@@ -1,19 +1,45 @@
-let table1 = document.getElementById("table1")
-let table2 = document.getElementById("table2")
+let table1 = document.getElementById("table1");
+let table2 = document.getElementById("table2");
+let yearslength = table1.rows[1].cells.length;
+let countriesNmb = table1.rows[2].cells[1].innerHTML;
 
+
+
+//gestion des données du premier tableau
+
+console.log(countriesNmb);
+
+let years = [];
+
+for(let i = 2;i<yearslength;i++){
+    years.push(table1.rows[1].cells[i].innerHTML);
+}
+
+console.log(years);
+
+let countries = [];
+
+for(x=1;x<=35;x++){
+    console.log(document.getElementsByTagName("tbody")[0].getElementsByTagName('tr')[x].getElementsByTagName('td')[0].innerHTML);
+    countries.push(document.getElementsByTagName("tbody")[0].getElementsByTagName('tr')[x].getElementsByTagName('td')[0].innerHTML);
+}
+
+
+
+//gestion premier graphique
 let canvasT1 = document.body.getElementsByTagName("h3")[0];
-let canvasT2 = document.getElementById("Homicides")
-
+let canvasT2 = document.getElementById("Homicides");
 
 canvasT1.insertAdjacentHTML('afterend', '<canvas id="graph1" width="400px" height="400px"></canvas>');
 canvasT2.insertAdjacentHTML('afterend', '<canvas id="graph2" width="400px" height="400px"></canvas>');
 
 let ctx = document.getElementById("graph1").getContext("2d");
 let chart = new Chart(ctx, {
+
     type: 'line',
 
     data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        labels: years,
         datasets: [{
             label: 'Unfilled',
             data: [
@@ -34,18 +60,8 @@ let chart = new Chart(ctx, {
             fill: true,
         }]
     },
-    // Configuration options go here
     options: {}
 });
-
-
-
-
-
-
-let row = table1.rows;
-let firstRow = table1.rows[1];
-console.log(firstRow.innerHTML);
 
 
 
@@ -60,3 +76,4 @@ xhr.onload = function() {
         }
 
 xhr.send()*/
+
