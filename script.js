@@ -10,10 +10,8 @@ canvasT2.insertAdjacentHTML('afterend', '<canvas id="graph2" width="400px" heigh
 
 let ctx = document.getElementById("graph1").getContext("2d");
 let chart = new Chart(ctx, {
-    // The type of chart we want to create
     type: 'line',
 
-    // The data for our dataset
     data: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
@@ -48,7 +46,6 @@ let chart = new Chart(ctx, {
 let row = table1.rows;
 let firstRow = table1.rows[1];
 console.log(firstRow.innerHTML);
-
 
 
 
