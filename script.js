@@ -1,8 +1,5 @@
 let table1 = document.getElementById("table1");
 let table2 = document.getElementById("table2");
-let yearslength = table1.rows[1].cells.length;
-let datavalue = [];
-
 let canvasT1 = document.body.getElementsByTagName("h3")[0];
 let canvasT2 = document.getElementById("Homicides");
 let canvasT3 = document.getElementById("firstHeading")
@@ -10,23 +7,20 @@ let canvasT3 = document.getElementById("firstHeading")
 //gestion des données du premier tableau
 
 let years = [];
+let countries = [];
+let obj = {
+    countries : countries,
+     data : []
+ }
+let yearslength = table1.rows[1].cells.length;
+let datavalue = [];
 
 for(let i = 2;i<yearslength;i++){
     years.push(table1.rows[1].cells[i].innerHTML);
 }
 
-
-let countries = [];
-
 for(let x=2;x<=36;x++){
     countries.push(table1.rows[x].cells[1].innerHTML);
-}
-
-
-
-let obj = {
-   countries : countries,
-    data : []
 }
 
 for(let a=2;a<=36;a++){
@@ -37,6 +31,7 @@ for(let a=2;a<=36;a++){
     obj.data.push(datavalue);
 }
 //gestion premier graphique
+
 canvasT1.insertAdjacentHTML('afterend', '<canvas id="graph1" width="400px" height="400px"></canvas>');
 canvasT2.insertAdjacentHTML('afterend', '<canvas id="graph2" width="400px" height="400px"></canvas>');
 canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
@@ -284,26 +279,23 @@ let chart = new Chart(ctx, {
     options: {}
 });
 
+//gestion données 2eme tableau
 
 let yearslength2 = table2.rows[0].cells.length;
-
 let years2 = [];
+let countries2 = [];
+let datavalue2 = [];
+let obj2 = {
+    countries2 : countries2,
+    data2 : []
+}
 
 for(let i = 2; i < yearslength2 ; i++){
     years2.push(table2.rows[0].cells[i].innerHTML);
 }
 
-let countries2 = [];
-
 for(let x = 1 ; x <= 30 ; x++){
     countries2.push(table2.rows[x].cells[1].innerHTML);
-}
-
-let datavalue2 = [];
-
-let obj2 = {
-    countries2 : countries2,
-    data2 : []
 }
 
 for(let a = 1 ; a <= 30 ; a++){
@@ -314,7 +306,7 @@ for(let a = 1 ; a <= 30 ; a++){
     obj2.data2.push(datavalue2);
 }
 
-
+//gestion 2eme graphique
 
 let ctx2 = document.getElementById("graph2").getContext("2d");
 let chart2 = new Chart(ctx2, {
@@ -537,6 +529,8 @@ let chart2 = new Chart(ctx2, {
     },
     options: {}
 });
+
+//3eme graphique
 
 let data3;
 let xhr = new XMLHttpRequest;
