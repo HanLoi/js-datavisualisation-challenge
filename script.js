@@ -3,11 +3,12 @@ let table2 = document.getElementById("table2");
 let yearslength = table1.rows[1].cells.length;
 let countriesNmb = table1.rows[2].cells[1].innerHTML;
 
-
+console.log(table1.rows[2].innerText)
 
 //gestion des données du premier tableau
 
-let years = [];
+let data = new Object()
+
 
 for(let i = 2;i<yearslength;i++){
     years.push(table1.rows[1].cells[i].innerHTML);
@@ -16,8 +17,9 @@ for(let i = 2;i<yearslength;i++){
 
 let countries = [];
 
-for(x=2;x<=36;x++){
-    countries.push(table1.rows[x].cells[1].innerHTML);
+for(let x=1;x<=35;x++){
+    console.log(document.getElementsByTagName("tbody")[0].getElementsByTagName('tr')[x].getElementsByTagName('td')[0].innerHTML);
+    countries.push(document.getElementsByTagName("tbody")[0].getElementsByTagName('tr')[x].getElementsByTagName('td')[0].innerHTML);
 }
 
 
@@ -239,21 +241,15 @@ let chart = new Chart(ctx, {
     options: {}
 });
 
-<<<<<<< HEAD
-
 for(let i=0 ; i= countries.lenght;i++){
     for(let j = 0; j>12; j++){
         countries[i] = new Array(table1.rows[i].cells[j].innerHTML);
     }    
 }
 
-console.log(countries[1])
+/*console.log(countries[1])*/
 
 
-
-
-=======
->>>>>>> acbe056e88e2a27d7519ed4311140f3608787c9f
 /*let xhr = new XMLHttpRequest;
 xhr.open('GET', 'https://canvasjs.com/services/data/datapoints.php', true)
 xhr.onload = function() {
@@ -265,3 +261,4 @@ xhr.onload = function() {
         }
 
 xhr.send()*/
+
