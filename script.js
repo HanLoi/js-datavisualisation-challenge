@@ -322,9 +322,9 @@ let obj2 = {
     data2 : []
 }
 
-for(a = 1 ; a <= 30 ; a++){
+for(let a = 1 ; a <= 30 ; a++){
     datavalue2 = [];
-    for( b = 2 ; b < yearslength2; b++ ){
+    for( let b = 2 ; b < yearslength2; b++ ){
         datavalue2.push(parseFloat(table2.rows[a].cells[b].innerHTML));
     }
     obj2.data2.push(datavalue2);
