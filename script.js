@@ -540,7 +540,8 @@ let chart2 = new Chart(ctx2, {
 let data3;
 let xhr = new XMLHttpRequest;
 
-function dataRefresh(){
+function drawGraph() {
+    
     let ctx3 = document.getElementById("graph3").getContext("2d");
     let chart3 = new Chart(ctx3, {
         type: 'scatter',
@@ -586,13 +587,20 @@ function dataRefresh(){
     });
 }
 
-
+function getData(){
 xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
 
 xhr.onload = function(){
     if(this.status === 200){
         data3 = JSON.parse(this.responseText);
-        setInterval(dataRefresh, 1000)
-}
-}
+        drawGraph();
+}else {
+    let canvasT3 = document.getElementById("firstHeading")
+    canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
+    document.getElementById("graph3").innerHTML="Error at load of data"
+}}
+
 xhr.send();
+}
+
+setInterval(getData, 1000);
