@@ -2,6 +2,7 @@ let table1 = document.getElementById("table1");
 let table2 = document.getElementById("table2");
 let yearslength = table1.rows[1].cells.length;
 let countriesNmb = table1.rows[2].cells[1].innerHTML;
+let datavalue = [];
 
 let canvasT1 = document.body.getElementsByTagName("h3")[0];
 let canvasT2 = document.getElementById("Homicides");
@@ -26,6 +27,22 @@ for(x=2;x<=36;x++){
 }
 
 console.log(countries);
+
+
+let obj = {
+   countries : countries,
+    data : []
+}
+
+for(a=2;a<=36;a++){
+    datavalue = [];
+    for(let b = 2;b<yearslength;b++){
+        datavalue.push(table1.rows[a].cells[b].innerHTML)
+        console.log(datavalue);
+    }
+    obj.data.push(datavalue);
+    console.log(obj.data);
+}
 
 
 
