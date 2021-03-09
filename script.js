@@ -5,7 +5,7 @@ let datavalue = [];
 
 let canvasT1 = document.body.getElementsByTagName("h3")[0];
 let canvasT2 = document.getElementById("Homicides");
-
+let canvasT3 = document.getElementById("firstHeading")
 
 //gestion des données du premier tableau
 
@@ -39,6 +39,7 @@ for(let a=2;a<=36;a++){
 //gestion premier graphique
 canvasT1.insertAdjacentHTML('afterend', '<canvas id="graph1" width="400px" height="400px"></canvas>');
 canvasT2.insertAdjacentHTML('afterend', '<canvas id="graph2" width="400px" height="400px"></canvas>');
+canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
 
 let ctx = document.getElementById("graph1").getContext("2d");
 let chart = new Chart(ctx, {
@@ -535,3 +536,10 @@ let chart2 = new Chart(ctx2, {
     },
     options: {}
 });
+
+
+
+
+
+
+
