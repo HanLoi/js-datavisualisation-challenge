@@ -293,7 +293,7 @@ for(let i = 2; i < yearslength2 ; i++){
 
 let countries2 = [];
 
-for(x = 1 ; x <= 30 ; x++){
+for(let x = 1 ; x <= 30 ; x++){
     countries2.push(table2.rows[x].cells[1].innerHTML);
 }
 
@@ -531,13 +531,6 @@ let chart2 = new Chart(ctx2, {
             ,
             fill: false,
             backgroundColor: 'rgb(156, 83, 114)',
-        }, {
-            label: countries2[30],
-            data: 
-                obj2.data2[30]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(233, 83, 114)',
         }]
     },
     options: {}
