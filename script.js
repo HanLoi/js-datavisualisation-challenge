@@ -537,9 +537,62 @@ let chart2 = new Chart(ctx2, {
     options: {}
 });
 
+let data3;
+let xhr = new XMLHttpRequest;
+
+function dataRefresh(){
+    let ctx3 = document.getElementById("graph3").getContext("2d");
+    let chart3 = new Chart(ctx3, {
+        type: 'scatter',
+        data: {
+            datasets: [{
+                label: 'Scatter Dataset',
+                data: [{
+                    x: data3[0][0],
+                    y: data3[0][1]
+                }, {
+                    x: data3[1][0],
+                    y: data3[1][1]
+                }, {
+                    x: data3[2][0],
+                    y: data3[2][1]
+                }, {
+                    x: data3[3][0],
+                    y: data3[3][1]
+                }, {
+                    x: data3[4][0],
+                    y: data3[4][1]
+                }, {
+                    x: data3[5][0],
+                    y: data3[5][1]
+                }, {
+                    x: data3[6][0],
+                    y: data3[6][1]
+                }, {
+                    x: data3[7][0],
+                    y: data3[7][1]
+                }, {
+                    x: data3[8][0],
+                    y: data3[8][1]
+                }, {
+                    x: data3[9][0],
+                    y: data3[9][1]
+                }],
+                backgroundColor:  'rgb(12, 83, 114)',
+            }]
+        },
+        options: {
+        }
+    });
+}
 
 
+xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
 
-
-
-
+xhr.onload = function(){
+    if(this.status === 200){
+        data3 = JSON.parse(this.responseText);
+        setInterval(dataRefresh, 1000)
+}
+}
+xhr.send();
