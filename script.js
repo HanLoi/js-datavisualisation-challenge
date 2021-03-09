@@ -284,6 +284,7 @@ let chart = new Chart(ctx, {
     options: {}
 });
 
+
 let yearslength2 = table2.rows[0].cells.length;
 
 let years2 = [];
