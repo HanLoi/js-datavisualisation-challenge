@@ -535,3 +535,20 @@ let chart2 = new Chart(ctx2, {
     },
     options: {}
 });
+
+let data3;
+let xhr = new XMLHttpRequest;
+
+xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
+
+xhr.onload = function(){
+    if(this.status === 200){
+        data3 = JSON.parse(this.responseText);
+    }
+    console.log(data3);
+}
+
+
+
+xhr.send();
+
