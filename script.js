@@ -283,24 +283,6 @@ let chart = new Chart(ctx, {
     options: {}
 });
 
-/*for(let i=0 ; i= countries.lenght;i++){
-    for(let j = 0; j>12; j++){
-        countries[i] = new Array(table1.rows[i].cells[j].innerHTML);
-    }    
-}*/
-/*
-let xhr = new XMLHttpRequest;
-xhr.open('GET', 'https://canvasjs.com/services/data/datapoints.php', true)
-xhr.onload = function() {
-            if (this.status === 200){
-                document.getElementById("quote").innerHTML=JSON.parse(this.responseText);
-            } else {
-                document.getElementById("quote").innerHTML="There is a error but there isn't a error in the spirit"
-            }
-        }
-
-xhr.send()*/
-
 let yearslength2 = table2.rows[0].cells.length;
 
 let years2 = [];
@@ -318,7 +300,7 @@ for(x = 1 ; x <= 30 ; x++){
 let datavalue2 = [];
 
 let obj2 = {
-    countries2 : countries,
+    countries2 : countries2,
     data2 : []
 }
 
@@ -329,4 +311,234 @@ for(let a = 1 ; a <= 30 ; a++){
     }
     obj2.data2.push(datavalue2);
 }
-console.log(obj2.data2);
+
+
+
+let ctx2 = document.getElementById("graph2").getContext("2d");
+let chart2 = new Chart(ctx2, {
+
+    type: 'bar',
+
+    data: {
+        labels: years2,
+        datasets: [{
+            label: countries2[0],
+            data: 
+                obj2.data2[0]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(255, 59, 71)',
+        }, {
+            label: countries2[1],
+            data:  
+                obj2.data2[1]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(177, 59, 71)',
+        }, {
+            label: countries2[2],
+            data: 
+                obj2.data2[2]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(177, 59, 116)',
+        }, {
+            label: countries2[3],
+            data: 
+                obj2.data2[3]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(106, 90, 205)',
+        }, {
+            label: countries2[4],
+            data: 
+                obj2.data2[4]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(255, 165, 0)',
+        }, {
+            label: countries2[5],
+            data: 
+                obj2.data2[5]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(60, 179, 113)',
+        }, {
+            label: countries2[6],
+            data: 
+                obj2.data2[6]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 0, 255)',
+        }, {
+            label: countries2[7],
+            data: 
+                obj2.data2[7]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(177, 59, 208)',
+        }, {
+            label: countries2[8],
+            data: 
+                obj2.data2[8]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(177, 255, 208)',
+        }, {
+            label: countries2[9],
+            data: 
+                obj2.data2[9]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 255, 208)',
+        }, {
+            label: countries2[10],
+            data: 
+                obj2.data2[10]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 255, 0)',
+        }, {
+            label: countries2[11],
+            data: 
+                obj2.data2[11]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 114, 0)',
+        }, {
+            label: countries2[12],
+            data: 
+                obj2.data2[12]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(86, 114, 0)',
+        }, {
+            label: countries2[13],
+            data: 
+                obj2.data2[13]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(86, 114, 129)',
+        }, {
+            label: countries2[14],
+            data: 
+                obj2.data2[14]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(86, 114, 207)',
+        }, {
+            label: countries2[15],
+            data: 
+                obj2.data2[15]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(86, 39, 207)',
+        }, {    
+            label: countries2[16],
+            data: 
+                obj2.data2[16]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(200, 39, 207)',
+        }, {
+            label: countries2[17],
+            data: 
+                obj2.data2[17]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(84, 182, 207)',
+        }, {
+            label: countries2[18],
+            data: 
+                obj2.data2[18]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(84, 26, 66)',
+        }, {
+            label: countries2[19],
+            data: 
+                obj2.data2[19]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(241, 120, 66)',
+        }, {
+            label: countries2[20],
+            data: 
+                obj2.data2[20]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(241, 255, 66)',
+        }, {
+            label: countries2[21],
+            data: 
+                obj2.data2[21]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(241, 0, 66)',
+        }, {
+            label: countries2[22],
+            data: 
+                obj2.data2[22]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(241, 190, 0)',
+        }, {
+            label: countries2[23],
+            data: 
+                obj2.data2[23]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 190, 0)',
+        }, {
+            label: countries2[24],
+            data: 
+                obj2.data2[24]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 190, 140)',
+        }, {
+            label: countries2[25],
+            data: 
+                obj2.data2[25]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(0, 190, 236)',
+        }, {
+            label: countries2[26],
+            data: 
+            obj2.data2[26]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(12, 0, 236)',
+        }, {
+            label: countries2[27],
+            data: 
+            obj2.data2[27]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(12, 0, 114)',
+        }, {
+            label: countries2[28],
+            data: 
+                obj2.data2[28]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(12, 83, 114)',
+        }, {
+            label: countries2[29],
+            data: 
+                obj2.data2[29]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(156, 83, 114)',
+        }, {
+            label: countries2[30],
+            data: 
+                obj2.data2[30]
+            ,
+            fill: false,
+            backgroundColor: 'rgb(233, 83, 114)',
+        }]
+    },
+    options: {}
+});
