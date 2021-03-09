@@ -54,199 +54,232 @@ let chart = new Chart(ctx, {
             data: 
               obj.data[0]
             ,
+            fill: false,
+            borderColor: 'rgb(255, 59, 71)',
         }, {
             label: countries[1],
-            fill: false,
-            borderDash: [5, 5],
             data:  
                 obj.data[1]
             ,
+            fill: false,
+            borderColor: 'rgb(177, 59, 71)',
         }, {
             label: countries[2],
             data: 
                 obj.data[2]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(177, 59, 116)',
         }, {
             label: countries[3],
             data: 
                 obj.data[3]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(106, 90, 205)',
         }, {
             label: countries[4],
             data: 
                 obj.data[4]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(255, 165, 0)',
         }, {
             label: countries[5],
             data: 
                 obj.data[5]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(60, 179, 113)',
         }, {
             label: countries[6],
             data: 
                 obj.data[6]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 0, 255)',
         }, {
             label: countries[7],
             data: 
                 obj.data[7]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(177, 59, 208)',
         }, {
             label: countries[8],
             data: 
                 obj.data[8]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(177, 255, 208)',
         }, {
             label: countries[9],
             data: 
                 obj.data[9]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 255, 208)',
         }, {
             label: countries[10],
             data: 
                 obj.data[10]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 255, 0)',
         }, {
             label: countries[11],
             data: 
                 obj.data[11]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 114, 0)',
         }, {
             label: countries[12],
             data: 
                 obj.data[12]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(86, 114, 0)',
         }, {
             label: countries[13],
             data: 
                 obj.data[13]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(86, 114, 129)',
         }, {
             label: countries[14],
             data: 
                 obj.data[14]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(86, 114, 207)',
         }, {
             label: countries[15],
             data: 
                 obj.data[15]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(86, 39, 207)',
         }, {
             label: countries[16],
             data: 
                 obj.data[16]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(200, 39, 207)',
         }, {
             label: countries[17],
             data: 
                 obj.data[17]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(84, 182, 207)',
         }, {
             label: countries[18],
             data: 
                 obj.data[18]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(84, 26, 66)',
         }, {
             label: countries[19],
             data: 
                 obj.data[19]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(241, 120, 66)',
         }, {
             label: countries[20],
             data: 
                 obj.data[20]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(241, 255, 66)',
         }, {
             label: countries[21],
             data: 
                 obj.data[21]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(241, 0, 66)',
         }, {
             label: countries[22],
             data: 
                 obj.data[22]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(241, 190, 0)',
         }, {
             label: countries[23],
             data: 
                 obj.data[23]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 190, 0)',
         }, {
             label: countries[24],
             data: 
                 obj.data[24]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 190, 140)',
         }, {
             label: countries[25],
             data: 
                 obj.data[25]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(0, 190, 236)',
         }, {
             label: countries[26],
             data: 
                 obj.data[26]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(12, 0, 236)',
         }, {
             label: countries[27],
             data: 
                 obj.data[27]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(12, 0, 114)',
         }, {
             label: countries[28],
             data: 
                 obj.data[28]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(12, 83, 114)',
         }, {
             label: countries[29],
             data: 
                 obj.data[29]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(156, 83, 114)',
         }, {
             label: countries[30],
             data: 
                 obj.data[30]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(233, 83, 114)',
         }, {
             label: countries[31],
             data: 
                 obj.data[31]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(255, 170, 114)',
         }, {
             label: countries[32],
             data: 
                 obj.data[32]
             ,
-            fill: true,
+            fill: false,
+            borderColor: 'rgb(255, 217, 114)',
         }]
     },
     options: {}
