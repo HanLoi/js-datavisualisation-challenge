@@ -1,7 +1,6 @@
 let table1 = document.getElementById("table1");
 let table2 = document.getElementById("table2");
 let yearslength = table1.rows[1].cells.length;
-let countriesNmb = table1.rows[2].cells[1].innerHTML;
 let datavalue = [];
 
 let canvasT1 = document.body.getElementsByTagName("h3")[0];
@@ -37,7 +36,6 @@ for(let a=2;a<=36;a++){
     }
     obj.data.push(datavalue);
 }
-console.log(obj.data[0]);
 //gestion premier graphique
 canvasT1.insertAdjacentHTML('afterend', '<canvas id="graph1" width="400px" height="400px"></canvas>');
 canvasT2.insertAdjacentHTML('afterend', '<canvas id="graph2" width="400px" height="400px"></canvas>');
@@ -270,3 +268,32 @@ xhr.onload = function() {
 
 xhr.send()*/
 
+let yearslength2 = table2.rows[0].cells.length;
+
+let years2 = [];
+
+for(let i = 2; i < yearslength2 ; i++){
+    years2.push(table2.rows[0].cells[i].innerHTML);
+}
+
+let countries2 = [];
+
+for(x = 1 ; x <= 30 ; x++){
+    countries2.push(table2.rows[x].cells[1].innerHTML);
+}
+
+let datavalue2 = [];
+
+let obj2 = {
+    countries2 : countries,
+    data2 : []
+}
+
+for(a = 1 ; a <= 30 ; a++){
+    datavalue2 = [];
+    for( b = 2 ; b < yearslength2; b++ ){
+        datavalue2.push(parseFloat(table2.rows[a].cells[b].innerHTML));
+    }
+    obj2.data2.push(datavalue2);
+}
+console.log(obj2.data2);
