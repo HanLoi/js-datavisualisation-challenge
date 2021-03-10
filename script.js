@@ -139,14 +139,13 @@ function getData() {
         canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
         document.getElementById("graph3").innerHTML="Error at load of data"
     }
-     
+    drawGraph(); 
 }
 xhr.send();
 
 }
-console.log(datagraph3);
+
 function drawGraph() {
-    getData();
     let ctx3 = document.getElementById("graph3").getContext("2d");
     let chart3 = new Chart(ctx3, {
         type: 'scatter',
@@ -162,6 +161,5 @@ function drawGraph() {
     });
 }
 getData();
-drawGraph();
 
 setInterval(getData, 1000);
