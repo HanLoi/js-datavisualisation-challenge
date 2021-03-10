@@ -124,7 +124,7 @@ let data3;
 let xhr = new XMLHttpRequest;
 let datagraph3 = [];
 
-function getData() {
+const getData = (ctx) => {
     xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
     
     xhr.onload = function(){
@@ -139,7 +139,7 @@ function getData() {
         canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
         document.getElementById("graph3").innerHTML="Error at load of data"
     }
-    drawGraph(); 
+    UpdateData(ctx);
 }
 xhr.send();
 
@@ -160,6 +160,26 @@ function drawGraph() {
         }
     });
 }
-getData();
 
-setInterval(getData, 1000);
+function UpdateData(ctx) {
+    xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
+    
+    xhr.onload = function(){
+        if(this.status === 200){
+            data3 = JSON.parse(this.responseText);
+            for(p = 0 ; p < data3.length ; p++ ){
+                datagraph3.push({x : data3[p][0], y : data3[p][1]})
+                
+            }
+    }else {
+        let canvasT3 = document.getElementById("firstHeading")
+        canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
+        document.getElementById("graph3").innerHTML="Error at load of data"
+    }
+    setTimeout(function(){UpdateData(ctx)}, 1000); 
+}
+xhr.send();
+}
+
+drawGraph();
+
