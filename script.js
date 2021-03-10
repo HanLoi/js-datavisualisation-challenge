@@ -2,7 +2,7 @@ let table1 = document.getElementById("table1");
 let table2 = document.getElementById("table2");
 let canvasT1 = document.body.getElementsByTagName("h3")[0];
 let canvasT2 = document.getElementById("Homicides");
-let canvasT3 = document.getElementById("firstHeading")
+//let canvasT3 = document.getElementById("firstHeading")
 
 //gestion des données du premier tableau
 
@@ -55,7 +55,7 @@ function randColor()
 
 canvasT1.insertAdjacentHTML('afterend', '<canvas id="graph1" width="400px" height="400px"></canvas>');
 canvasT2.insertAdjacentHTML('afterend', '<canvas id="graph2" width="400px" height="400px"></canvas>');
-canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
+//canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
 
 let ctx = document.getElementById("graph1").getContext("2d");
 let chart = new Chart(ctx, {
@@ -120,11 +120,23 @@ let chart2 = new Chart(ctx2, {
 
 //3eme graphique
 
+let chart3 = null;
 let data3;
 let xhr = new XMLHttpRequest;
 let datagraph3 = [];
 
-const getData = (ctx) => {
+const drawGraph = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 800;
+    canvas.height = 300;
+    const ctx3 = document.getContext("2d");
+    const title = document.getElementById("firstHeading");
+    title.after(canvas);
+    getData(ctx3);
+}
+
+
+const getData = (ctx3) => {
     xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
     
     xhr.onload = function(){
@@ -134,41 +146,39 @@ const getData = (ctx) => {
                 datagraph3.push({x : data3[p][0], y : data3[p][1]})
                 
             }
+            chart3 = new Chart(ctx3, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Scatter Dataset',
+                        data: datagraph3,
+                        backgroundColor:  'rgb(12, 83, 114)',
+                    }]
+                },
+                options: {
+                }
+                
+            });
     }else {
         let canvasT3 = document.getElementById("firstHeading")
         canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
         document.getElementById("graph3").innerHTML="Error at load of data"
     }
-    UpdateData(ctx);
+    UpdateData(ctx3);
 }
 xhr.send();
 
 }
 
-function drawGraph() {
-    let ctx3 = document.getElementById("graph3").getContext("2d");
-    let chart3 = new Chart(ctx3, {
-        type: 'scatter',
-        data: {
-            datasets: [{
-                label: 'Scatter Dataset',
-                data: datagraph3,
-                backgroundColor:  'rgb(12, 83, 114)',
-            }]
-        },
-        options: {
-        }
-    });
-}
 
-function UpdateData(ctx) {
+const UpdateData = (ctx3) => {
     xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
     
     xhr.onload = function(){
         if(this.status === 200){
             data3 = JSON.parse(this.responseText);
             for(p = 0 ; p < data3.length ; p++ ){
-                datagraph3.push({x : data3[p][0], y : data3[p][1]})
+               chart.data.datasets.push({x : data3[p][0], y : data3[p][1]})
                 
             }
     }else {
@@ -176,7 +186,8 @@ function UpdateData(ctx) {
         canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
         document.getElementById("graph3").innerHTML="Error at load of data"
     }
-    setTimeout(function(){UpdateData(ctx)}, 1000); 
+    chart.update();
+    setTimeout(function(){UpdateData(ctx3)}, 1000); 
 }
 xhr.send();
 }
