@@ -129,7 +129,7 @@ const drawGraph = () => {
     const canvas = document.createElement('canvas');
     canvas.width = 800;
     canvas.height = 300;
-    const ctx3 = document.getContext("2d");
+    const ctx3 = canvas.getContext("2d");
     const title = document.getElementById("firstHeading");
     title.after(canvas);
     getData(ctx3);
@@ -179,6 +179,7 @@ const UpdateData = (ctx3) => {
             data3 = JSON.parse(this.responseText);
             for(p = 0 ; p < data3.length ; p++ ){
                chart.data.datasets.push({x : data3[p][0], y : data3[p][1]})
+                console.log(chart);
                 
             }
     }else {
@@ -186,10 +187,11 @@ const UpdateData = (ctx3) => {
         canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
         document.getElementById("graph3").innerHTML="Error at load of data"
     }
-    chart.update();
-    setTimeout(function(){UpdateData(ctx3)}, 1000); 
+    
 }
 xhr.send();
+chart.update();
+setTimeout(function(){UpdateData(ctx3)}, 1000); 
 }
 
 drawGraph();
