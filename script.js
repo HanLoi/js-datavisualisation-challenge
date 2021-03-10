@@ -13,23 +13,43 @@ let obj = {
      data : []
  }
 let yearslength = table1.rows[1].cells.length;
+let table1length = table1.rows.length;
 let datavalue = [];
+let datagraph = [];
 
 for(let i = 2;i<yearslength;i++){
     years.push(table1.rows[1].cells[i].innerHTML);
 }
 
-for(let x=2;x<=36;x++){
+for(let x=2;x<table1length;x++){
     countries.push(table1.rows[x].cells[1].innerHTML);
 }
 
-for(let a=2;a<=36;a++){
+for(let a=2;a<table1length;a++){
     datavalue = [];
     for(let b = 2;b<yearslength;b++){
         datavalue.push(parseFloat(table1.rows[a].cells[b].innerHTML))
     }
     obj.data.push(datavalue);
 }
+
+for(m = 0 ; m <= table1length-3 ; m++){
+    datagraph.push({label : countries[m],data : obj.data[m],borderColor : randColor(),fill : false})
+}
+
+//couleur random graphe
+
+
+function randColor() 
+{
+    var r = ()=> { return Math.floor(Math.random()*256) };
+    return "rgb(" + r() + "," + r() + "," + r() + ")";
+}
+
+
+
+
+
 //gestion premier graphique
 
 canvasT1.insertAdjacentHTML('afterend', '<canvas id="graph1" width="400px" height="400px"></canvas>');
@@ -42,239 +62,8 @@ let chart = new Chart(ctx, {
     type: 'line',
 
     data: {
-        labels: years,
-        datasets: [{
-            label: countries[0],
-            data: 
-              obj.data[0]
-            ,
-            fill: false,
-            borderColor: 'rgb(255, 59, 71)',
-        }, {
-            label: countries[1],
-            data:  
-                obj.data[1]
-            ,
-            fill: false,
-            borderColor: 'rgb(177, 59, 71)',
-        }, {
-            label: countries[2],
-            data: 
-                obj.data[2]
-            ,
-            fill: false,
-            borderColor: 'rgb(177, 59, 116)',
-        }, {
-            label: countries[3],
-            data: 
-                obj.data[3]
-            ,
-            fill: false,
-            borderColor: 'rgb(106, 90, 205)',
-        }, {
-            label: countries[4],
-            data: 
-                obj.data[4]
-            ,
-            fill: false,
-            borderColor: 'rgb(255, 165, 0)',
-        }, {
-            label: countries[5],
-            data: 
-                obj.data[5]
-            ,
-            fill: false,
-            borderColor: 'rgb(60, 179, 113)',
-        }, {
-            label: countries[6],
-            data: 
-                obj.data[6]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 0, 255)',
-        }, {
-            label: countries[7],
-            data: 
-                obj.data[7]
-            ,
-            fill: false,
-            borderColor: 'rgb(177, 59, 208)',
-        }, {
-            label: countries[8],
-            data: 
-                obj.data[8]
-            ,
-            fill: false,
-            borderColor: 'rgb(177, 255, 208)',
-        }, {
-            label: countries[9],
-            data: 
-                obj.data[9]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 255, 208)',
-        }, {
-            label: countries[10],
-            data: 
-                obj.data[10]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 255, 0)',
-        }, {
-            label: countries[11],
-            data: 
-                obj.data[11]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 114, 0)',
-        }, {
-            label: countries[12],
-            data: 
-                obj.data[12]
-            ,
-            fill: false,
-            borderColor: 'rgb(86, 114, 0)',
-        }, {
-            label: countries[13],
-            data: 
-                obj.data[13]
-            ,
-            fill: false,
-            borderColor: 'rgb(86, 114, 129)',
-        }, {
-            label: countries[14],
-            data: 
-                obj.data[14]
-            ,
-            fill: false,
-            borderColor: 'rgb(86, 114, 207)',
-        }, {
-            label: countries[15],
-            data: 
-                obj.data[15]
-            ,
-            fill: false,
-            borderColor: 'rgb(86, 39, 207)',
-        }, {
-            label: countries[16],
-            data: 
-                obj.data[16]
-            ,
-            fill: false,
-            borderColor: 'rgb(200, 39, 207)',
-        }, {
-            label: countries[17],
-            data: 
-                obj.data[17]
-            ,
-            fill: false,
-            borderColor: 'rgb(84, 182, 207)',
-        }, {
-            label: countries[18],
-            data: 
-                obj.data[18]
-            ,
-            fill: false,
-            borderColor: 'rgb(84, 26, 66)',
-        }, {
-            label: countries[19],
-            data: 
-                obj.data[19]
-            ,
-            fill: false,
-            borderColor: 'rgb(241, 120, 66)',
-        }, {
-            label: countries[20],
-            data: 
-                obj.data[20]
-            ,
-            fill: false,
-            borderColor: 'rgb(241, 255, 66)',
-        }, {
-            label: countries[21],
-            data: 
-                obj.data[21]
-            ,
-            fill: false,
-            borderColor: 'rgb(241, 0, 66)',
-        }, {
-            label: countries[22],
-            data: 
-                obj.data[22]
-            ,
-            fill: false,
-            borderColor: 'rgb(241, 190, 0)',
-        }, {
-            label: countries[23],
-            data: 
-                obj.data[23]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 190, 0)',
-        }, {
-            label: countries[24],
-            data: 
-                obj.data[24]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 190, 140)',
-        }, {
-            label: countries[25],
-            data: 
-                obj.data[25]
-            ,
-            fill: false,
-            borderColor: 'rgb(0, 190, 236)',
-        }, {
-            label: countries[26],
-            data: 
-                obj.data[26]
-            ,
-            fill: false,
-            borderColor: 'rgb(12, 0, 236)',
-        }, {
-            label: countries[27],
-            data: 
-                obj.data[27]
-            ,
-            fill: false,
-            borderColor: 'rgb(12, 0, 114)',
-        }, {
-            label: countries[28],
-            data: 
-                obj.data[28]
-            ,
-            fill: false,
-            borderColor: 'rgb(12, 83, 114)',
-        }, {
-            label: countries[29],
-            data: 
-                obj.data[29]
-            ,
-            fill: false,
-            borderColor: 'rgb(156, 83, 114)',
-        }, {
-            label: countries[30],
-            data: 
-                obj.data[30]
-            ,
-            fill: false,
-            borderColor: 'rgb(233, 83, 114)',
-        }, {
-            label: countries[31],
-            data: 
-                obj.data[31]
-            ,
-            fill: false,
-            borderColor: 'rgb(255, 170, 114)',
-        }, {
-            label: countries[32],
-            data: 
-                obj.data[32]
-            ,
-            fill: false,
-            borderColor: 'rgb(255, 217, 114)',
-        }]
+       labels: years,
+        datasets : datagraph
     },
     options: {}
 });
@@ -282,9 +71,11 @@ let chart = new Chart(ctx, {
 //gestion données 2eme tableau
 
 let yearslength2 = table2.rows[0].cells.length;
+let table2length = table2.rows.length;
 let years2 = [];
 let countries2 = [];
 let datavalue2 = [];
+let datagraph2 = [];
 let obj2 = {
     countries2 : countries2,
     data2 : []
@@ -294,17 +85,25 @@ for(let i = 2; i < yearslength2 ; i++){
     years2.push(table2.rows[0].cells[i].innerHTML);
 }
 
-for(let x = 1 ; x <= 30 ; x++){
+for(let x = 1 ; x < table2length ; x++){
     countries2.push(table2.rows[x].cells[1].innerHTML);
 }
+console.log(countries2);
 
-for(let a = 1 ; a <= 30 ; a++){
+for(let a = 1 ; a < table2length ; a++){
     datavalue2 = [];
     for( let b = 2 ; b < yearslength2; b++ ){
         datavalue2.push(parseFloat(table2.rows[a].cells[b].innerHTML));
     }
     obj2.data2.push(datavalue2);
 }
+console.log(obj2.data2);
+
+for(m = 0 ; m < table2length-1 ; m++){
+    datagraph2.push({label : countries2[m],data : obj2.data2[m],backgroundColor : randColor(),fill : false})
+}
+
+
 
 //gestion 2eme graphique
 
@@ -315,7 +114,8 @@ let chart2 = new Chart(ctx2, {
 
     data: {
         labels: years2,
-        datasets: [{
+        datasets: datagraph2
+        /* [{
             label: countries2[0],
             data: 
                 obj2.data2[0]
@@ -525,7 +325,7 @@ let chart2 = new Chart(ctx2, {
             ,
             fill: false,
             backgroundColor: 'rgb(156, 83, 114)',
-        }]
+        }] */
     },
     options: {}
 });
