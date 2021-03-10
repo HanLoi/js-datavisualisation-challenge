@@ -36,6 +36,7 @@ for(let a=2;a<table1length;a++){
 for(m = 0 ; m <= table1length-3 ; m++){
     datagraph.push({label : countries[m],data : obj.data[m],borderColor : randColor(),fill : false})
 }
+console.log(datagraph);
 
 //couleur random graphe
 
@@ -88,7 +89,6 @@ for(let i = 2; i < yearslength2 ; i++){
 for(let x = 1 ; x < table2length ; x++){
     countries2.push(table2.rows[x].cells[1].innerHTML);
 }
-console.log(countries2);
 
 for(let a = 1 ; a < table2length ; a++){
     datavalue2 = [];
@@ -97,7 +97,6 @@ for(let a = 1 ; a < table2length ; a++){
     }
     obj2.data2.push(datavalue2);
 }
-console.log(obj2.data2);
 
 for(m = 0 ; m < table2length-1 ; m++){
     datagraph2.push({label : countries2[m],data : obj2.data2[m],backgroundColor : randColor(),fill : false})
@@ -115,217 +114,6 @@ let chart2 = new Chart(ctx2, {
     data: {
         labels: years2,
         datasets: datagraph2
-        /* [{
-            label: countries2[0],
-            data: 
-                obj2.data2[0]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(255, 59, 71)',
-        }, {
-            label: countries2[1],
-            data:  
-                obj2.data2[1]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(177, 59, 71)',
-        }, {
-            label: countries2[2],
-            data: 
-                obj2.data2[2]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(177, 59, 116)',
-        }, {
-            label: countries2[3],
-            data: 
-                obj2.data2[3]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(106, 90, 205)',
-        }, {
-            label: countries2[4],
-            data: 
-                obj2.data2[4]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(255, 165, 0)',
-        }, {
-            label: countries2[5],
-            data: 
-                obj2.data2[5]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(60, 179, 113)',
-        }, {
-            label: countries2[6],
-            data: 
-                obj2.data2[6]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 0, 255)',
-        }, {
-            label: countries2[7],
-            data: 
-                obj2.data2[7]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(177, 59, 208)',
-        }, {
-            label: countries2[8],
-            data: 
-                obj2.data2[8]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(177, 255, 208)',
-        }, {
-            label: countries2[9],
-            data: 
-                obj2.data2[9]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 255, 208)',
-        }, {
-            label: countries2[10],
-            data: 
-                obj2.data2[10]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 255, 0)',
-        }, {
-            label: countries2[11],
-            data: 
-                obj2.data2[11]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 114, 0)',
-        }, {
-            label: countries2[12],
-            data: 
-                obj2.data2[12]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(86, 114, 0)',
-        }, {
-            label: countries2[13],
-            data: 
-                obj2.data2[13]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(86, 114, 129)',
-        }, {
-            label: countries2[14],
-            data: 
-                obj2.data2[14]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(86, 114, 207)',
-        }, {
-            label: countries2[15],
-            data: 
-                obj2.data2[15]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(86, 39, 207)',
-        }, {    
-            label: countries2[16],
-            data: 
-                obj2.data2[16]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(200, 39, 207)',
-        }, {
-            label: countries2[17],
-            data: 
-                obj2.data2[17]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(84, 182, 207)',
-        }, {
-            label: countries2[18],
-            data: 
-                obj2.data2[18]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(84, 26, 66)',
-        }, {
-            label: countries2[19],
-            data: 
-                obj2.data2[19]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(241, 120, 66)',
-        }, {
-            label: countries2[20],
-            data: 
-                obj2.data2[20]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(241, 255, 66)',
-        }, {
-            label: countries2[21],
-            data: 
-                obj2.data2[21]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(241, 0, 66)',
-        }, {
-            label: countries2[22],
-            data: 
-                obj2.data2[22]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(241, 190, 0)',
-        }, {
-            label: countries2[23],
-            data: 
-                obj2.data2[23]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 190, 0)',
-        }, {
-            label: countries2[24],
-            data: 
-                obj2.data2[24]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 190, 140)',
-        }, {
-            label: countries2[25],
-            data: 
-                obj2.data2[25]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(0, 190, 236)',
-        }, {
-            label: countries2[26],
-            data: 
-            obj2.data2[26]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(12, 0, 236)',
-        }, {
-            label: countries2[27],
-            data: 
-            obj2.data2[27]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(12, 0, 114)',
-        }, {
-            label: countries2[28],
-            data: 
-                obj2.data2[28]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(12, 83, 114)',
-        }, {
-            label: countries2[29],
-            data: 
-                obj2.data2[29]
-            ,
-            fill: false,
-            backgroundColor: 'rgb(156, 83, 114)',
-        }] */
     },
     options: {}
 });
@@ -334,46 +122,38 @@ let chart2 = new Chart(ctx2, {
 
 let data3;
 let xhr = new XMLHttpRequest;
+let datagraph3 = [];
 
-function drawGraph() {
+function getData() {
+    xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
     
+    xhr.onload = function(){
+        if(this.status === 200){
+            data3 = JSON.parse(this.responseText);
+            for(p = 0 ; p < data3.length ; p++ ){
+                datagraph3.push({x : data3[p][0], y : data3[p][1]})
+                
+            }
+    }else {
+        let canvasT3 = document.getElementById("firstHeading")
+        canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
+        document.getElementById("graph3").innerHTML="Error at load of data"
+    }
+     
+}
+xhr.send();
+
+}
+console.log(datagraph3);
+function drawGraph() {
+    getData();
     let ctx3 = document.getElementById("graph3").getContext("2d");
     let chart3 = new Chart(ctx3, {
         type: 'scatter',
         data: {
             datasets: [{
                 label: 'Scatter Dataset',
-                data: [{
-                    x: data3[0][0],
-                    y: data3[0][1]
-                }, {
-                    x: data3[1][0],
-                    y: data3[1][1]
-                }, {
-                    x: data3[2][0],
-                    y: data3[2][1]
-                }, {
-                    x: data3[3][0],
-                    y: data3[3][1]
-                }, {
-                    x: data3[4][0],
-                    y: data3[4][1]
-                }, {
-                    x: data3[5][0],
-                    y: data3[5][1]
-                }, {
-                    x: data3[6][0],
-                    y: data3[6][1]
-                }, {
-                    x: data3[7][0],
-                    y: data3[7][1]
-                }, {
-                    x: data3[8][0],
-                    y: data3[8][1]
-                }, {
-                    x: data3[9][0],
-                    y: data3[9][1]
-                }],
+                data: datagraph3,
                 backgroundColor:  'rgb(12, 83, 114)',
             }]
         },
@@ -381,21 +161,7 @@ function drawGraph() {
         }
     });
 }
-
-function getData(){
-xhr.open('GET','https://canvasjs.com/services/data/datapoints.php',true)
-
-xhr.onload = function(){
-    if(this.status === 200){
-        data3 = JSON.parse(this.responseText);
-        drawGraph();
-}else {
-    let canvasT3 = document.getElementById("firstHeading")
-    canvasT3.insertAdjacentHTML('afterend', '<canvas id="graph3" width="400px" height="400px"></canvas>');
-    document.getElementById("graph3").innerHTML="Error at load of data"
-}}
-
-xhr.send();
-}
+getData();
+drawGraph();
 
 setInterval(getData, 1000);
