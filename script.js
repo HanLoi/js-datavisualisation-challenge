@@ -179,8 +179,6 @@ const UpdateData = (ctx3) => {
             data3 = JSON.parse(this.responseText);
             for(p = 0 ; p < data3.length ; p++ ){
                chart.data.datasets.push({x : data3[p][0], y : data3[p][1]})
-                console.log(chart);
-                
             }
     }else {
         let canvasT3 = document.getElementById("firstHeading")
